@@ -2,7 +2,7 @@ export const translations = {
   uz: {
     nav: {
       home: "Asosiy",
-      about: "About",
+      about: "Biz haqimizda",
       product: "Mahsulot",
       contact: "Aloqa",
       langToggle: "RU",
@@ -22,6 +22,7 @@ export const translations = {
       ],
     },
     about: {
+      badge_label: "Haqida",
       heading: "Omega Ultra Pure Water haqida",
       description: "Omega Ultra Pure Water — bu oddiy shahar suvini ultra toza suvga (18.2 MΩ·cm gacha) aylantiruvchi yuqori texnologiyali uskunadir. Tizim ko'p bosqichli tozalash, avtomatik nazorat va energiya tejamkor texnologiyalarni o'zida mujassam etadi.",
       why_heading: "Asosiy afzalliklar",
@@ -84,6 +85,11 @@ export const translations = {
         { label: "Avtomatik himoya", value: "Suv yo'qligi, past bosim, to'lib ketish va ortiqcha yukda" },
       ],
       step_label: "Bosqich",
+      gallery_badge: "Galereya",
+      comparison_badge: "Taqqoslash",
+      best_choice: "Eng yaxshi tanlov",
+      annual_comparison: "Yillik xarajat taqqoslash",
+      economic_badge: "ROI Kalkulyator",
       comparison_heading: "Taqqoslash: Omega Ultra vs Distillyator",
       comparison: {
         columns: ["Mezon", "Omega Ultra Pure", "Distillyator"],
@@ -130,6 +136,8 @@ export const translations = {
       },
     },
     contact: {
+      badge_label: "Aloqa",
+      available: "24/7 mavjud",
       heading: "Biz bilan bog'laning",
       tagline: "Omega Ultra Pure Water — sifatni tanlaganlar uchun.",
       phone_label: "Telefon",
@@ -188,6 +196,7 @@ export const translations = {
       ],
     },
     about: {
+      badge_label: "О системе",
       heading: "Об Omega Ultra Pure Water",
       description: "Omega Ultra Pure Water — это высокотехнологичное оборудование для очистки воды до уровня ультрачистой (резистивность до 18,2 МОм·см). Система сочетает многоступенчатую очистку, интеллектуальный контроль качества и экономное потребление ресурсов.",
       why_heading: "Ключевые преимущества системы",
@@ -250,6 +259,11 @@ export const translations = {
         { label: "Автозащита", value: "При нехватке воды, низком давлении, переполнении и перегрузке" },
       ],
       step_label: "Шаг",
+      gallery_badge: "Галерея",
+      comparison_badge: "Сравнение",
+      best_choice: "Лучший выбор",
+      annual_comparison: "Сравнение годовых затрат",
+      economic_badge: "ROI Калькулятор",
       comparison_heading: "Сравнение: Omega Ultra vs Дистиллятор",
       comparison: {
         columns: ["Критерий", "Omega Ultra Pure", "Дистиллятор"],
@@ -296,6 +310,8 @@ export const translations = {
       },
     },
     contact: {
+      badge_label: "Контакты",
+      available: "Доступно 24/7",
       heading: "Свяжитесь с нами",
       tagline: "Omega Ultra Pure Water — для тех, кто выбирает качество.",
       phone_label: "Телефон",

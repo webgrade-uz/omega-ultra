@@ -54,7 +54,7 @@ export default function WorkingPrinciple() {
 
               {/* Content */}
               <div className="text-xs font-bold text-primary-light uppercase tracking-wider mb-1">
-                Step {step.number}
+                {t.product.step_label} {step.number}
               </div>
               <h3 className="text-base font-bold text-gray-900 mb-3">{step.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>

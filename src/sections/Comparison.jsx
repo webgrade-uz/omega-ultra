@@ -17,7 +17,7 @@ export default function Comparison() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 rounded-full px-4 py-1.5 mb-4">
             <div className="w-2 h-2 rounded-full bg-primary" />
-            <span className="text-primary text-xs font-semibold uppercase tracking-wider">Comparison</span>
+            <span className="text-primary text-xs font-semibold uppercase tracking-wider">{t.product.comparison_badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
             {t.product.comparison_heading}
@@ -80,7 +80,7 @@ export default function Comparison() {
           <div className="flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-5 py-2">
             <CircleCheck className="w-4 h-4 text-green-600" />
             <span className="text-green-700 font-semibold text-sm">{columns[1]}</span>
-            <span className="text-green-600 text-xs">— Best Choice</span>
+            <span className="text-green-600 text-xs">— {t.product.best_choice}</span>
           </div>
         </div>
       </div>

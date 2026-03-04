@@ -38,7 +38,7 @@ export default function About() {
           <div>
             <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-4">
               <div className="w-2 h-2 rounded-full bg-primary" />
-              <span className="text-primary text-xs font-semibold uppercase tracking-wider">About</span>
+              <span className="text-primary text-xs font-semibold uppercase tracking-wider">{t.about.badge_label}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
               {t.about.heading}

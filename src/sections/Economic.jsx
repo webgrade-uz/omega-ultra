@@ -17,7 +17,7 @@ export default function Economic() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-4">
             <div className="w-2 h-2 rounded-full bg-primary" />
-            <span className="text-primary text-xs font-semibold uppercase tracking-wider">ROI Calculator</span>
+            <span className="text-primary text-xs font-semibold uppercase tracking-wider">{t.product.economic_badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-3">
             {t.product.economic_heading}
@@ -129,7 +129,7 @@ export default function Economic() {
 
         {/* Visual comparison bar */}
         <div className="mt-8 bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <p className="text-sm font-semibold text-gray-600 mb-4 text-center">Annual Cost Comparison</p>
+          <p className="text-sm font-semibold text-gray-600 mb-4 text-center">{t.product.annual_comparison}</p>
           <div className="space-y-3">
             <div>
               <div className="flex justify-between text-xs mb-1">

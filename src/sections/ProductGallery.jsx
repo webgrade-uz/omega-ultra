@@ -10,7 +10,7 @@ import img4 from '../assets/photo_2026-03-04_01-08-19.jpg'
 const images = [img1, img2, img3, img4]
 
 export default function ProductGallery() {
-  const { lang } = useLanguage()
+  const { lang, t } = useLanguage()
   const [ref, isVisible] = useScrollReveal()
   const [active, setActive] = useState(0)
 
@@ -27,7 +27,7 @@ export default function ProductGallery() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-4">
             <div className="w-2 h-2 rounded-full bg-primary" />
-            <span className="text-primary text-xs font-semibold uppercase tracking-wider">Gallery</span>
+            <span className="text-primary text-xs font-semibold uppercase tracking-wider">{t.product.gallery_badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-3">{heading}</h2>
           <p className="text-gray-500 text-base max-w-xl mx-auto">{sub}</p>

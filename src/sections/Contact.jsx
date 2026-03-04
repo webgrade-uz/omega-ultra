@@ -63,7 +63,7 @@ export default function Contact() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 rounded-full px-4 py-1.5 mb-4">
             <div className="w-2 h-2 rounded-full bg-primary" />
-            <span className="text-primary text-xs font-semibold uppercase tracking-wider">Contact</span>
+            <span className="text-primary text-xs font-semibold uppercase tracking-wider">Aloqa</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-3">
             {t.contact.heading}
@@ -97,7 +97,7 @@ export default function Contact() {
               <p className="text-blue-100 text-sm leading-relaxed">{t.contact.tagline}</p>
               <div className="mt-4 flex items-center gap-2 text-blue-200 text-xs">
                 <CircleDot className="w-4 h-4 text-green-400 fill-green-400" />
-                <span>Available 24/7</span>
+                <span>{t.contact.available}</span>
               </div>
             </div>
           </div>
