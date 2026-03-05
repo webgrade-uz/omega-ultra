@@ -1,6 +1,6 @@
 import { useLanguage } from '../context/LanguageContext'
 import logoImg from '../assets/photo_2026-03-04_01-08-20.jpg'
-import { Phone, Send, Mail } from 'lucide-react'
+import { Phone, Send } from 'lucide-react'
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -55,15 +55,13 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="text-blue-100 text-sm flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0" />
-                {t.contact.phone}
+                <span className="whitespace-pre-line">{t.contact.phone}</span>
               </li>
               <li className="text-blue-100 text-sm flex items-center gap-2">
                 <Send className="w-4 h-4 shrink-0" />
-                {t.contact.telegram}
-              </li>
-              <li className="text-blue-100 text-sm flex items-center gap-2">
-                <Mail className="w-4 h-4 shrink-0" />
-                {t.contact.email}
+                <a href={t.contact.telegram} target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white no-underline">
+                  {t.contact.telegram}
+                </a>
               </li>
             </ul>
           </div>

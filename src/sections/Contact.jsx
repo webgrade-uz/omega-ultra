@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { Phone, Send, Mail, MapPin, CheckCircle2, CircleDot } from 'lucide-react'
+import { Phone, Send, MapPin, CheckCircle2, CircleDot } from 'lucide-react'
 
 export default function Contact() {
   const { t } = useLanguage()
@@ -13,8 +13,18 @@ export default function Contact() {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    const BOT_TOKEN = "8739959513:AAEm5zGTuvOCNIBHcDBZVz1jCEFfkE8WN6o";
+    const CHAT_ID = "7427886417";
+    const text = `📋 Yangi so'rov:\n\n👤 Ism: ${form.name}\n🏢 Kompaniya: ${form.company}\n📞 Telefon: ${form.phone}\n💬 Xabar: ${form.message}`
+    try {
+      await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: CHAT_ID, text }),
+      })
+    } catch (_) {}
     setSubmitted(true)
     setForm({ name: '', company: '', phone: '', message: '' })
     setTimeout(() => setSubmitted(false), 5000)
@@ -34,13 +44,7 @@ export default function Contact() {
       value: t.contact.telegram,
       color: 'text-sky-500',
       bg: 'bg-sky-50',
-    },
-    {
-      icon: <Mail className="w-5 h-5" />,
-      label: t.contact.email_label,
-      value: t.contact.email,
-      color: 'text-primary',
-      bg: 'bg-blue-50',
+      href: t.contact.telegram,
     },
     {
       icon: <MapPin className="w-5 h-5" />,
@@ -63,7 +67,7 @@ export default function Contact() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 rounded-full px-4 py-1.5 mb-4">
             <div className="w-2 h-2 rounded-full bg-primary" />
-            <span className="text-primary text-xs font-semibold uppercase tracking-wider">Aloqa</span>
+            <span className="text-primary text-xs font-semibold uppercase tracking-wider">{t.contact.badge_label}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-3">
             {t.contact.heading}
@@ -74,22 +78,26 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-10">
           {/* Left: contact info */}
           <div className="space-y-4">
-            {contactItems.map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-blue-50 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
-              >
-                <div className={`w-12 h-12 rounded-xl ${item.bg} flex items-center justify-center ${item.color} shrink-0`}>
-                  {item.icon}
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-0.5">
-                    {item.label}
-                  </p>
-                  <p className={`font-semibold text-sm ${item.color}`}>{item.value}</p>
-                </div>
-              </div>
-            ))}
+            {contactItems.map((item, i) => {
+              const Wrapper = item.href ? 'a' : 'div'
+              return (
+                <Wrapper
+                  key={i}
+                  {...(item.href ? { href: item.href, target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-blue-50 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 no-underline"
+                >
+                  <div className={`w-12 h-12 rounded-xl ${item.bg} flex items-center justify-center ${item.color} shrink-0`}>
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-0.5">
+                      {item.label}
+                    </p>
+                    <p className={`font-semibold text-sm whitespace-pre-line ${item.color}`}>{item.value}</p>
+                  </div>
+                </Wrapper>
+              )
+            })}
 
             {/* CTA tagline card */}
             <div className="bg-linear-to-br from-primary to-primary-light rounded-2xl p-6 text-white mt-6">
